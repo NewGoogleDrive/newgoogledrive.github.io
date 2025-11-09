@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>projects</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      color: white;
+      background-color: #111;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 300%;
+      background-image: 
+        linear-gradient(45deg, #1a1a1a 25%, transparent 25%), 
+        linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1a1a1a 75%), 
+        linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+      background-size: 80px 80px;
+      background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+      animation: move 10s linear infinite;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    @keyframes move {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-160px, -160px); }
+    }
+
+    .tabs {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      display: flex;
+      gap: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    a {
+      text-decoration: none;
+      color: #a5b4ff;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 2rem;
+    }
+
+    .project {
+      background: rgba(0,0,0,0.6);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      margin: 1rem;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .project h2 {
+      margin: 0;
+      color: #b0c4ff;
+    }
+
+    .project p {
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <a href="index.html">bio</a>
+    <a href="projects.html" style="color:white;">projects</a>
+    <a href="gallery.html">gallery</a>
+  </div>
+
+  <h1>stuff i'm working on</h1>
+
+  <div class="project">
+    <h2><a href="https://7locked.github.io/">7locked.github.io</a></h2>
+    <p>revamping it to look cooler and feel smoother.</p>
+  </div>
+
+  <div class="project">
+    <h2><a href="https://scratch.mit.edu/users/stebberry">scratch projects</a></h2>
+    <p>i make bfdi-style art in scratch’s costume editor. one of my main projects is <b>TOS V3!!!</b>, a visual concept with simple vector design. i also made <b>Redder</b>, a mini album project built in scratch that features music i made in garageband — including tracks like <i>title</i>, <i>puzzles</i>, and <i>puzzles pt. 2</i>. i also sometimes make like 1 song and add it to the redder album lol</p>
+  </div>
+
+  <div class="project">
+    <h2><a href="https://newgoogledrive.github.io/SJSEBK/">squeakjs embed kit</a></h2>
+    <p>a web thing i made for embedding squeakjs easier. works surprisingly well.</p>
+  </div>
+</body>
+</html>
