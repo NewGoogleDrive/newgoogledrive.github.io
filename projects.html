@@ -96,6 +96,55 @@
     <a href="projects.html" style="color:white;">projects</a>
     <a href="gallery.html">gallery</a>
   </div>
+<!-- background music toggle -->
+<button id="music-btn">🎵 play music</button>
+<audio id="bg-music" loop>
+  <source src="eshop.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+
+  // keep playing across tabs using localStorage
+  if (localStorage.getItem("musicPlaying") === "true") {
+    music.play().catch(() => {});
+    btn.textContent = "🔇 pause music";
+  }
+
+  btn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      btn.textContent = "🔇 pause music";
+      localStorage.setItem("musicPlaying", "true");
+    } else {
+      music.pause();
+      btn.textContent = "🎵 play music";
+      localStorage.setItem("musicPlaying", "false");
+    }
+  });
+</script>
+
+<style>
+  #music-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 8px 14px;
+    font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+
+  #music-btn:hover {
+    background: rgba(255,255,255,0.1);
+  }
+</style>
 
   <h1>stuff i'm working on</h1>
 
